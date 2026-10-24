@@ -1,26 +1,22 @@
-/* Verified content for this independent project. Source records are unchanged. */
+/* Source-linked project content. Molecular files and notebook permissions are unchanged. */
 window.RESEARCH_CONTENT = {
-  "version": "2026-10-24-independent-3",
+  "version": "2026-10-24-source-audit-v5",
   "navigation": [
     "Overview",
-    "Molecules",
-    "Laboratory Work",
-    "Modeling & Results",
-    "Chemistry",
-    "Applications",
+    "Atomic structure",
+    "How it works",
+    "Research",
     "Sources"
   ],
   "sources": {
     "dhfr-preparation": {
       "id": "dhfr-preparation",
       "title": "DHFR five-model preparation report",
-      "url": "https://docs.google.com/document/d/1VlzmDSzttrKBMjlVvny58u0wnc7Cq3ePj_4xyaCBMZQ/edit",
       "access": "Existing document permissions retained"
     },
     "dhfr-rationale": {
       "id": "dhfr-rationale",
       "title": "DHFR design rationale",
-      "url": "https://docs.google.com/document/d/1Ku2IUfJpr4KlL4gqplIsU9QfFJeEdZtdWx4gVxZ0Dso/edit",
       "access": "Existing document permissions retained"
     },
     "4m6k": {
@@ -56,12 +52,12 @@ window.RESEARCH_CONTENT = {
       "credit": "Alexander Wong",
       "lab": "Smith-Carpenter Lab",
       "institution": "Fairfield University",
-      "collaboration": "DHFR collaboration with Phelan Lab",
-      "question": "How does changing the base from guanosine to isoguanosine alter the modeled fit at human DHFR? The next experiment asks whether either synthesized compound inhibits the enzyme.",
-      "overview": "DHFR uses NADPH to convert dihydrofolate to tetrahydrofolate, helping supply reduced folates for nucleotide synthesis. The models compare guanosine–Phe–Glu and isoguanosine–Phe–Glu near its folate pocket. The first task is to repair and validate the starting poses; inhibition must then be measured.",
-      "next": "Characterize the synthesized GS and isog compounds, then compare DHFR activity with matched controls and an interference check.",
+      "collaboration": "In collaboration with Dr. Phelan’s lab",
+      "question": "How does changing the base affect a model’s fit at DHFR?",
+      "overview": "DHFR uses NADPH to convert dihydrofolate into tetrahydrofolate, helping maintain reduced folates for nucleotide production. The project compares GS-Phe-Glu and isog-Phe-Glu to ask how changing the nucleoside base affects the modeled pocket fit.",
+      "next": "Review the unresolved contacts and chemical-state choices in the five-model preparation. After suitable compounds are synthesized and characterized, Dr. Phelan’s lab can test DHFR inhibition and cellular effects with the agreed controls.",
       "nextDetail": "Model clashes, protonation and force-field choices need review before dynamics. Enzyme inhibition, cell entry and cell response answer separate questions.",
-      "relevance": "Methotrexate inhibits folate metabolism, including DHFR. These models explore a different molecular framework; enzyme and cell experiments must establish whether the corresponding compounds have useful activity.",
+      "relevance": "DHFR inhibition can restrict the reduced-folate supply used for DNA synthesis. The immediate use of these models is to guide a controlled comparison of the two compounds.",
       "model": {
         "label": "GS / isog model complexes",
         "caption": "4M6K-derived preparation models with unrelaxed poses. Switch between GS and isog to compare the changed base and shared peptide.",
@@ -76,7 +72,7 @@ window.RESEARCH_CONTENT = {
         {
           "id": "enzyme",
           "label": "Human DHFR",
-          "text": "The protein derives from chain A of the experimental 4M6K structure. DHFR regenerates reduced folate used in nucleotide production.",
+          "text": "DHFR converts dihydrofolate, or DHF, to tetrahydrofolate, or THF. This helps maintain the reduced-folate supply used to make nucleotides.",
           "sourceIds": [
             "4m6k",
             "dhfr-reaction"
@@ -99,7 +95,7 @@ window.RESEARCH_CONTENT = {
         {
           "id": "candidate",
           "label": "GS / isog model",
-          "text": "Both models contain the same L-Phe–L-Glu peptide. Exchanging guanosine for isoguanosine changes the base’s hydrogen-bond donors and acceptors.",
+          "text": "GS and isog share the L-Phe-L-Glu peptide. Guanine has a 2-amino/6-oxo pattern; isoguanine changes it to 2-oxo/6-amino, changing the base’s hydrogen-bonding face.",
           "sourceIds": [
             "dhfr-rationale"
           ],
@@ -107,7 +103,6 @@ window.RESEARCH_CONTENT = {
             {
               "id": "dhfr-rationale",
               "title": "DHFR design rationale",
-              "url": "https://docs.google.com/document/d/1Ku2IUfJpr4KlL4gqplIsU9QfFJeEdZtdWx4gVxZ0Dso/edit",
               "access": "Existing document permissions retained"
             }
           ]
@@ -115,7 +110,7 @@ window.RESEARCH_CONTENT = {
         {
           "id": "nadph",
           "label": "NADPH",
-          "text": "The prepared models contain modeled reduced NADPH. Deposited 4M6K instead contains oxidized NADP⁺ and folic acid, removed during preparation.",
+          "text": "NADPH supplies reducing power for the normal DHFR reaction. These prepared models contain modeled reduced NADPH; deposited 4M6K contains oxidized NADP+ and folic acid.",
           "sourceIds": [
             "dhfr-preparation",
             "4m6k"
@@ -124,7 +119,6 @@ window.RESEARCH_CONTENT = {
             {
               "id": "dhfr-preparation",
               "title": "DHFR five-model preparation report",
-              "url": "https://docs.google.com/document/d/1VlzmDSzttrKBMjlVvny58u0wnc7Cq3ePj_4xyaCBMZQ/edit",
               "access": "Existing document permissions retained"
             },
             {
@@ -138,7 +132,7 @@ window.RESEARCH_CONTENT = {
         {
           "id": "pocket",
           "label": "Modeled pocket",
-          "text": "The model lies near the folate pocket in an unrelaxed pose with unresolved overlaps. Nearby atoms show geometry to inspect, not established binding contacts.",
+          "text": "The prepared molecules sit near the folate-binding pocket. Short contacts remain in both unrelaxed poses, so these positions are starting geometries to inspect.",
           "sourceIds": [
             "dhfr-preparation"
           ],
@@ -146,7 +140,6 @@ window.RESEARCH_CONTENT = {
             {
               "id": "dhfr-preparation",
               "title": "DHFR five-model preparation report",
-              "url": "https://docs.google.com/document/d/1VlzmDSzttrKBMjlVvny58u0wnc7Cq3ePj_4xyaCBMZQ/edit",
               "access": "Existing document permissions retained"
             }
           ]
@@ -212,7 +205,6 @@ window.RESEARCH_CONTENT = {
             {
               "id": "dhfr-rationale",
               "title": "DHFR design rationale",
-              "url": "https://docs.google.com/document/d/1Ku2IUfJpr4KlL4gqplIsU9QfFJeEdZtdWx4gVxZ0Dso/edit",
               "access": "Existing document permissions retained"
             }
           ]
@@ -226,7 +218,6 @@ window.RESEARCH_CONTENT = {
             {
               "id": "dhfr-preparation",
               "title": "DHFR five-model preparation report",
-              "url": "https://docs.google.com/document/d/1VlzmDSzttrKBMjlVvny58u0wnc7Cq3ePj_4xyaCBMZQ/edit",
               "access": "Existing document permissions retained"
             },
             {
@@ -246,7 +237,6 @@ window.RESEARCH_CONTENT = {
             {
               "id": "dhfr-preparation",
               "title": "DHFR five-model preparation report",
-              "url": "https://docs.google.com/document/d/1VlzmDSzttrKBMjlVvny58u0wnc7Cq3ePj_4xyaCBMZQ/edit",
               "access": "Existing document permissions retained"
             }
           ]
@@ -260,7 +250,6 @@ window.RESEARCH_CONTENT = {
             {
               "id": "dhfr-preparation",
               "title": "DHFR five-model preparation report",
-              "url": "https://docs.google.com/document/d/1VlzmDSzttrKBMjlVvny58u0wnc7Cq3ePj_4xyaCBMZQ/edit",
               "access": "Existing document permissions retained"
             }
           ]
@@ -269,12 +258,11 @@ window.RESEARCH_CONTENT = {
           "id": "future-simulation",
           "number": 5,
           "title": "Relax and validate before dynamics",
-          "text": "The work ahead includes solvent and ions, numerical validation, minimization, equilibration and independent trajectories. No production trajectory is represented for these models.",
+          "text": "The current 4M6K handoff still needs geometry and parameter review, water and ions, energy/force validation, minimization and equilibration before production dynamics. Earlier 1U72 technical pilots are separate historical work.",
           "sources": [
             {
               "id": "dhfr-preparation",
               "title": "DHFR five-model preparation report",
-              "url": "https://docs.google.com/document/d/1VlzmDSzttrKBMjlVvny58u0wnc7Cq3ePj_4xyaCBMZQ/edit",
               "access": "Existing document permissions retained"
             }
           ]
@@ -283,12 +271,11 @@ window.RESEARCH_CONTENT = {
           "id": "laboratory-tests",
           "number": 6,
           "title": "Measure inhibition, then cell response",
-          "text": "Prepare characterized material and test DHFR activity with interference controls. Uptake and cellular response are later, separate experiments.",
+          "text": "The Smith-Carpenter Lab will prepare and characterize faculty-selected compounds. Dr. Phelan’s lab will carry out the agreed DHFR inhibition and cell experiments once suitable material is available.",
           "sources": [
             {
               "id": "dhfr-rationale",
               "title": "DHFR design rationale",
-              "url": "https://docs.google.com/document/d/1Ku2IUfJpr4KlL4gqplIsU9QfFJeEdZtdWx4gVxZ0Dso/edit",
               "access": "Existing document permissions retained"
             }
           ]
@@ -327,7 +314,7 @@ window.RESEARCH_CONTENT = {
         }
       ],
       "chemistry": {
-        "title": "DHFR’s normal reaction",
+        "title": "The normal DHFR reaction",
         "reaction": "DHF + NADPH + H⁺ → THF + NADP⁺",
         "steps": [
           "DHFR binds dihydrofolate (DHF) and the reducing cofactor NADPH.",
@@ -335,7 +322,7 @@ window.RESEARCH_CONTENT = {
           "Reduced folates support the chemistry needed to build nucleotides.",
           "An inhibition assay measures whether adding a synthesized compound reduces DHFR activity."
         ],
-        "caption": "NADPH supplies reducing power as DHFR converts dihydrofolate to tetrahydrofolate. No enzyme rate has been measured here for the GS or isog compounds.",
+        "caption": "NADPH transfers reducing power as DHFR converts DHF to THF. An inhibition assay will test whether either synthesized nucleopeptide reduces that activity.",
         "controls": [
           "Enzyme-only activity",
           "Matched vehicle",
@@ -352,7 +339,6 @@ window.RESEARCH_CONTENT = {
           {
             "id": "dhfr-preparation",
             "title": "DHFR five-model preparation report",
-            "url": "https://docs.google.com/document/d/1VlzmDSzttrKBMjlVvny58u0wnc7Cq3ePj_4xyaCBMZQ/edit",
             "access": "Existing document permissions retained"
           }
         ]
@@ -406,13 +392,11 @@ window.RESEARCH_CONTENT = {
             {
               "id": "dhfr-preparation",
               "title": "DHFR five-model preparation report",
-              "url": "https://docs.google.com/document/d/1VlzmDSzttrKBMjlVvny58u0wnc7Cq3ePj_4xyaCBMZQ/edit",
               "access": "Existing document permissions retained"
             },
             {
               "id": "dhfr-rationale",
               "title": "DHFR design rationale",
-              "url": "https://docs.google.com/document/d/1Ku2IUfJpr4KlL4gqplIsU9QfFJeEdZtdWx4gVxZ0Dso/edit",
               "access": "Existing document permissions retained"
             }
           ],
@@ -423,13 +407,11 @@ window.RESEARCH_CONTENT = {
         {
           "id": "dhfr-preparation",
           "title": "DHFR five-model preparation report",
-          "url": "https://docs.google.com/document/d/1VlzmDSzttrKBMjlVvny58u0wnc7Cq3ePj_4xyaCBMZQ/edit",
           "access": "Existing document permissions retained"
         },
         {
           "id": "dhfr-rationale",
           "title": "DHFR design rationale",
-          "url": "https://docs.google.com/document/d/1Ku2IUfJpr4KlL4gqplIsU9QfFJeEdZtdWx4gVxZ0Dso/edit",
           "access": "Existing document permissions retained"
         },
         {
@@ -462,7 +444,15 @@ window.RESEARCH_CONTENT = {
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3784351/"
         }
       ],
-      "sourceNote": "Project documents retain their existing permissions and may require the lab account."
+      "sourceNote": "Project documents retain their existing permissions and may require the lab account.",
+      "summary": "DHFR (dihydrofolate reductase) helps supply reduced folates for DNA synthesis. It is a target of the cancer drug methotrexate. These models compare guanosine (GS) and isoguanosine (isog), each linked to Phe-Glu, at the enzyme’s folate pocket.",
+      "nextExperiment": "Review the unresolved contacts and chemical-state choices in the five-model preparation. After suitable compounds are synthesized and characterized, Dr. Phelan’s lab can test DHFR inhibition and cellular effects with the agreed controls.",
+      "roles": {
+        "computational": "Alexander Wong: molecular modeling and analysis",
+        "chemistry": "Smith-Carpenter Lab: synthesis and purification of selected compounds",
+        "biology": "Dr. Phelan’s lab: agreed DHFR inhibition and cell experiments",
+        "structuralReview": "Dr. Macwan: structural review and simulation setup"
+      }
     }
   }
 };

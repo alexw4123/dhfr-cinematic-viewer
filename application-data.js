@@ -1,12 +1,12 @@
-/* Application rationale for this independent project. No measured advantage is implied. */
+/* Source-linked project content. Molecular files and notebook permissions are unchanged. */
 window.RESEARCH_APPLICATIONS = {
-  "version": "2026-10-24-independent-3",
+  "version": "2026-10-24-source-audit-v5",
   "dhfr": {
     "title": "DHFR inhibition and cancer research",
-    "intro": "The models compare two versions of the same molecular framework. The application is to guide the synthesis and testing of compounds that may inhibit DHFR, an established cancer-drug target.",
+    "intro": "The immediate task is to connect the changed base chemistry to an enzyme result. Compare characterized GS and isog compounds under the same DHFR assay conditions, using methotrexate as an established reference.",
     "existing": {
       "title": "Why target DHFR?",
-      "text": "Cells use reduced folates to make DNA building blocks. Methotrexate inhibits folate metabolism, including DHFR, which connects this target to cancer treatment. A useful alternative still has to perform in cells; an enzyme result alone cannot answer that.",
+      "text": "Cells use reduced folates to make DNA building blocks. Methotrexate inhibits folate metabolism, including DHFR. That makes the enzyme relevant to cancer research, while uptake and cellular response remain separate experimental questions.",
       "sources": [
         {
           "title": "Methotrexate · official labeling",
@@ -19,14 +19,13 @@ window.RESEARCH_APPLICATIONS = {
       "text": "GS–Phe–Glu and isog–Phe–Glu retain the same peptide while exchanging the base’s 2-amino/6-oxo and 2-oxo/6-amino groups. This matched comparison asks whether a different arrangement of hydrogen-bond donors and acceptors changes pocket compatibility and measured inhibition.",
       "sources": [
         {
-          "title": "Design rationale",
-          "url": "https://docs.google.com/document/d/1Ku2IUfJpr4KlL4gqplIsU9QfFJeEdZtdWx4gVxZ0Dso/edit"
+          "title": "Design rationale"
         }
       ]
     },
     "use": {
       "title": "Choose the next compound to test",
-      "text": "Test the synthesized GS and isog compounds in the same human-DHFR activity assay. A reproducible difference would connect the exchanged base chemistry to enzyme inhibition and guide the next design. The unrelaxed models help frame this test; they do not establish drug efficacy."
+      "text": "Measure concentration-response curves for the characterized GS and isog compounds using the same enzyme, substrate and NADPH conditions. Interference controls check whether a compound changes the optical readout rather than enzyme activity."
     },
     "comparisons": [
       {
@@ -50,17 +49,17 @@ window.RESEARCH_APPLICATIONS = {
     ],
     "evidence": [
       {
-        "title": "Why enzyme and cell results are separate",
-        "text": "A different peptide-DHFR study reported stronger effects in its enzyme assay than in cells. That precedent supports measuring both stages, rather than treating biochemical potency as a cellular result.",
+        "title": "Enzyme activity and cell response",
+        "text": "A different peptide-DHFR study reported both enzyme inhibition and cell tests. These answer different questions: an effect on a purified enzyme does not establish the response in a cell.",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5816602/"
       },
       {
-        "title": "What a drug comparison has to consider",
+        "title": "Transport and intracellular metabolism",
         "text": "Primary work comparing pralatrexate with methotrexate examined transport and intracellular metabolism. Such factors help explain why a target-binding picture is only one part of therapeutic performance.",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3784351/"
       }
     ],
-    "next": "Repair and validate the modeled poses. Confirm GS and isog compound identity and purity, then run matched human-DHFR inhibition and interference measurements. Follow an interpretable enzyme result with cellular studies.",
-    "limits": "No GS/isog inhibition curve or cell-response result is available in the project records shown here. The present contribution is the molecular comparison and a defined experimental test."
+    "next": "Resolve the preparation flags, confirm compound identity and purity, and agree on the assay with Dr. Phelan. Measure inhibition before designing cellular follow-up.",
+    "limits": "The current records contain prepared models and separate historical technical pilots, but no GS/isog inhibition curves or cell-response results."
   }
 };
