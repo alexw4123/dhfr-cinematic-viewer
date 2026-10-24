@@ -38,8 +38,8 @@
   "files": [
     {
       "path": "index.html",
-      "bytes": 6044,
-      "sha256": "06c78ad9ae367f918905b7a9a42667003188a5414c04eb934fd446273bc4dd13"
+      "bytes": 6108,
+      "sha256": "06bfe2f6d9499e88c25030653abcae47122c4c01cf2e2a4504bfc78868ec4afd"
     },
     {
       "path": "style.css",
@@ -108,8 +108,8 @@
     },
     {
       "path": "story-data.js",
-      "bytes": 20595,
-      "sha256": "55a33aa955aae7cdc97f28406f291160a850c2e25b0ff23f1a1ddc7f04bd9998"
+      "bytes": 20756,
+      "sha256": "fb52ef2aed12878dbf9896b601217afdbe46fda88fe442e095a683d5544dd7b3"
     },
     {
       "path": "story-scene.js",
