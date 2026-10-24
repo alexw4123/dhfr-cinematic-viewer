@@ -228,7 +228,14 @@ export function createMolecularScene({canvas,project='heme',assetBase='./assets'
     const layer=currentLayer();if(layer){status.atomCount=layer.atoms.length;status.heavyAtomCount=layer.atoms.filter(atom=>atom.element!=='H').length;status.bondCount=layer.bonds.length;status.modelRadius=layer.rawRadius;}
     if(trajectoryEnabled&&trajectory&&progress>=.32&&progress<=.66)applyTrajectoryFrame(Math.round(clamp((progress-1/3)/(1/6))*(trajectory.frameCount-1)));
   }
-  function resize(){const rect=canvas.getBoundingClientRect();width=Math.max(1,rect.width);height=Math.max(1,rect.height);aspect=width/height;renderer.setSize(width,height,false);camera.aspect=aspect;camera.updateProjectionMatrix();application?.resize?.(aspect);applyState();}
+  function resize(){
+    const rect=canvas.getBoundingClientRect();width=Math.max(1,rect.width);height=Math.max(1,rect.height);aspect=width/height;renderer.setSize(width,height,false);camera.aspect=aspect;
+    // A portrait film has its narrative below the model. Shift the projection
+    // of the entire 3D scene upward, including source solvent and application
+    // geometry, without altering source coordinates or desktop composition.
+    if(aspect<.9)camera.setViewOffset(width,height,0,height*.26,width,height);else camera.clearViewOffset();
+    camera.updateProjectionMatrix();application?.resize?.(aspect);applyState();
+  }
   function updateCamera(delta,now){
     const app=smooth(.65,.77,progress)*(1-smooth(.94,1,progress)),mechanism=smooth(.49,.55,progress)*(1-smooth(.62,.67,progress));
     if(now>manualUntil){
