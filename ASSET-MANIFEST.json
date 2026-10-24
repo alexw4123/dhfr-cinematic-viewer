@@ -1,17 +1,12 @@
 {
-  "project": "dhfr",
-  "sha256": {
+  "assets": {
     "assets/dhfr-display-provenance.json": "70f81660ef1c2fd60a586e63a16984b0a708651cbc99f9090d6b965100f9a81f",
     "assets/dhfr-gs-connected.pdb": "726d5828f685de3bb83d5370b2296a891caef991bb02d0f6627b8b94a7378144",
     "assets/dhfr-gs.pdb": "0f041098449919e145a6dd34c700d0fcfa6bf72b84cfd81c8eb0d1be64fef617",
     "assets/dhfr-isog-connected.pdb": "4322fbcf031733d17a8e409c2bbbf0910e759e8d8aec3628fb586c1c99c0f45b",
     "assets/dhfr-isog.pdb": "d2df97bcd5a5ca6e3ddf1ead91a9c8be8f7981224b5d526274f3c51429d0d1f3",
     "assets/NGL-LICENSE.txt": "146ec981abe68ac72ee133565f9c83928fa804c4c89ce04b248fa6f6ec0cbad4",
-    "assets/ngl.js": "be8d4b16f1d73458efd70d2a3319ef2888fb6fa821732c319a99ff43a8e4f7e0",
-    "vendor/OrbitControls.js": "b97879c748170baadeb3fb84cea1ffdf4674e283dc06042f34e2acb95a76042c",
-    "vendor/THREE-LICENSE.txt": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
-    "vendor/three.core.js": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
-    "vendor/three.module.js": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    "assets/ngl.js": "be8d4b16f1d73458efd70d2a3319ef2888fb6fa821732c319a99ff43a8e4f7e0"
   },
-  "original_files_unchanged": true
+  "sourceModelsPreserved": true
 }
