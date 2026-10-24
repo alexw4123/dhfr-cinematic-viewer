@@ -40,8 +40,8 @@
   "files": [
     {
       "path": "index.html",
-      "bytes": 7445,
-      "sha256": "c5d3a2a206fad3fa412e9f8c771ae5e38f9615603ef5a449e1b7ee8c152d0e4a"
+      "bytes": 7559,
+      "sha256": "87b6bc56b91ae905d10cb8acd75e35eed321a031a3a64814f877d9fcc672b6e0"
     },
     {
       "path": "style.css",
@@ -144,7 +144,7 @@
       "sha256": "219747b9acd228409845fe0ea51bf955369cef3db609c5891f50d539019215c6"
     }
   ],
-  "revision": "20261024-clear-v5",
+  "revision": "20261024-clear-v5-final",
   "independentProjectData": true,
   "motion": {
     "kind": "camera",
