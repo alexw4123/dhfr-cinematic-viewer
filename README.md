@@ -33,3 +33,7 @@ These are static, unsolvated, unrelaxed 4M6K-derived preparation models. The can
 The visible model container `#molecular-viewport` exposes actual model-ready status, atom/bond counts, model key, component selection, selected atom count, representation, isolation, last picked source atom index, pocket counts, and the current camera orientation as DOM data attributes. The controls expose `aria-pressed`; captions and source-model metadata remain readable without inspecting developer tools.
 
 Expected counts: 3,153 atoms and 3,195 explicit bonds for GS and isog, with no candidate–protein covalent bonds. Source and connectivity provenance can be verified independently with NGL's PDB parser and the source atom/CONECT records. Camera and selection actions must leave those source coordinates unchanged.
+
+## Interactive application illustration
+
+Delivery, cell entry, the DHFR target, and cancer relevance. IM injection is an educational route example; GS/isog have no established administration route or therapeutic effect. The application panel uses short, user-triggered 3D scenes with captions; it does not portray measured pharmacokinetics, chemical reaction dynamics, or treatment outcomes. The atomic NGL explorer and original molecular assets are preserved.

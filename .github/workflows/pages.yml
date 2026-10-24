@@ -21,7 +21,7 @@ jobs:
       - name: Prepare static research viewer
         run: |
           mkdir -p _site
-          cp index.html style.css app.js story-data.js .nojekyll README.md ASSET-MANIFEST.json _site/
+          cp index.html style.css app.js story-data.js .nojekyll README.md ASSET-MANIFEST.json application-tour.js application-tour.css _site/
           unzip -q assets.zip -d _site
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4

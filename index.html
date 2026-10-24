@@ -7,8 +7,10 @@
   <meta name="description" content="Compare the actual GS and isog nucleopeptide models prepared for human DHFR research at Fairfield University.">
   <title>Nucleopeptide Candidates Targeting Human DHFR | Fairfield University</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="application-tour.css">
   <script src="assets/ngl.js" defer></script>
   <script src="app.js" type="module"></script>
+  <script src="application-tour.js" type="module"></script>
 </head>
 <body>
   <a class="skip-link" href="#model-controls">Skip to molecular controls</a>
@@ -23,6 +25,7 @@
       <p class="eyebrow">Molecular design · Human DHFR</p>
       <h1 id="project-title">Design and Evaluation of Nucleopeptide Candidates Targeting Human Dihydrofolate Reductase</h1>
       <div class="intro-bottom"><p>Alexander Wong · Smith-Carpenter Lab · Fairfield University<br><span>DHFR collaboration with Phelan Lab</span></p><a href="#model-controls" id="explore-structure">Explore the structure <span aria-hidden="true">↙</span></a></div>
+      <a class="application-link" href="#application-tour">See the application <span aria-hidden="true">↓</span></a>
     </section>
 
     <section class="comparison-layout" aria-label="Candidate comparison and research captions">
@@ -58,6 +61,36 @@
         <article class="caption" aria-live="polite" aria-atomic="true"><p id="caption-number" class="caption-number">01 / THE ENZYME</p><h3 id="caption-title">Human DHFR</h3><p id="caption-copy"></p><p id="caption-detail" class="caption-detail"></p><a id="caption-source" href="https://www.rcsb.org/structure/4M6K" target="_blank" rel="noopener noreferrer">Read the source ↗</a></article>
         <div class="model-boundary"><h3>What these models can show</h3><p>Atomic arrangement, source connectivity, and a candidate starting pose. They contain unresolved overlaps and do not demonstrate binding, inhibition, or anticancer activity.</p></div>
       </aside>
+    </section>
+
+    <section class="application-tour" id="application-tour" aria-labelledby="application-heading" data-application-step="0" data-application-ready="false" data-application-models-ready="false" data-application-target="gs">
+      <div class="section-heading"><div><p class="eyebrow">From the target to a biological question</p><h2 id="application-heading">What would a DHFR candidate need to do?</h2></div></div>
+      <p class="application-intro">Delivery, cell entry, and target inhibition are separate problems. Follow the route below to see how the molecular design connects to cancer research—and which experiments still stand between a starting model and a medicine.</p>
+      <nav class="application-steps" aria-label="Application pathway steps">
+        <button type="button" data-application-step="0" aria-pressed="true" aria-controls="application-caption"><span>01</span>Delivery context</button>
+        <button type="button" data-application-step="1" aria-pressed="false" aria-controls="application-caption"><span>02</span>Cell entry</button>
+        <button type="button" data-application-step="2" aria-pressed="false" aria-controls="application-caption"><span>03</span>DHFR target</button>
+        <button type="button" data-application-step="3" aria-pressed="false" aria-controls="application-caption"><span>04</span>Cancer relevance</button>
+      </nav>
+      <div class="application-layout">
+        <figure class="application-figure">
+          <div class="application-scene-header"><span id="application-scene-title">Delivery context</span><span>3D application pathway</span></div>
+          <div id="application-canvas" tabindex="0" role="group" aria-label="Three-dimensional illustration of a possible delivery pathway" aria-describedby="application-note application-help">
+            <p class="application-fallback" id="application-fallback">Opening the 3D illustration. The four application captions are also available through the buttons above.</p>
+            <span class="application-label" id="application-label-a" aria-hidden="true"></span><span class="application-label" id="application-label-b" aria-hidden="true"></span>
+          </div>
+          <figcaption><span id="application-figure-context">Illustrative anatomy · IM route example</span><span id="application-coordinate-note">Source-coordinate molecular inset in step 03</span></figcaption>
+        </figure>
+        <article id="application-caption" class="application-caption" aria-live="polite" aria-atomic="true">
+          <p class="application-caption-number" id="application-caption-number">01 / A delivery route</p>
+          <h3 id="application-title">Delivery comes before the target</h3>
+          <p id="application-copy">Some established DHFR medicines, including methotrexate, have injectable formulations. This upper-arm intramuscular scene illustrates a delivery route; no route has been tested for these GS or isog candidates.</p>
+          <p class="application-detail" id="application-detail">A model fitted into an enzyme pocket is still far from a medicine. Formulation, stability, absorption, and safe exposure would have to be established before considering any administration route.</p>
+          <a class="application-caption-source" id="application-source" href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a63364d5-4dfa-49d7-8a5e-c8959ae1d37a" target="_blank" rel="noopener noreferrer">Established medicine: official methotrexate label ↗</a>
+        </article>
+      </div>
+      <div class="application-controls"><div><button type="button" id="application-replay" disabled>Replay motion ↻</button><span id="application-help">Drag horizontally to inspect · Select a step to continue</span></div><div class="application-target-buttons" id="application-target-buttons" hidden><span>Inset candidate</span><button type="button" data-application-target="gs" aria-pressed="true" disabled>GS</button><button type="button" data-application-target="isog" aria-pressed="false" disabled>isog</button></div></div>
+      <p class="application-note" id="application-note"><strong>Illustrative delivery and target mechanism; not measured in these candidates.</strong> Anatomy, transport, and the DNA pathway are simplified and not to scale. Step 03 uses the actual source molecular coordinates. The short motions are explanatory illustrations, separate from molecular dynamics and experimental results. Reduced motion shows static scenes.</p>
     </section>
 
     <section class="experiment-strip" aria-labelledby="experiment-title">

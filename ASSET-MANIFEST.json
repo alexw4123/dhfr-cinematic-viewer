@@ -8,5 +8,16 @@
     "assets/NGL-LICENSE.txt": "146ec981abe68ac72ee133565f9c83928fa804c4c89ce04b248fa6f6ec0cbad4",
     "assets/ngl.js": "be8d4b16f1d73458efd70d2a3319ef2888fb6fa821732c319a99ff43a8e4f7e0"
   },
-  "sourceModelsPreserved": true
+  "sourceModelsPreserved": true,
+  "applicationAnimation": {
+    "module": "application-tour.js",
+    "style": "application-tour.css",
+    "description": "Delivery, cell entry, the DHFR target, and cancer relevance. IM injection is an educational route example; GS/isog have no established administration route or therapeutic effect.",
+    "geometry": "Code-built explanatory geometry plus source-coordinate molecular context. Visual transforms change display placement only.",
+    "sourceCoordinatesModified": false,
+    "simulationEvidence": false,
+    "autoplay": false,
+    "controls": "Four user-selected stages, replay current stage, keyboard inspection; system reduced-motion preference shows still scenes.",
+    "renderer": "Existing pinned Three.js files from unchanged assets.zip, vendor/three.module.js and vendor/three.core.js."
+  }
 }
