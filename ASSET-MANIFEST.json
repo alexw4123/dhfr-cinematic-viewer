@@ -24,7 +24,12 @@
     ".nojekyll",
     "assets/selection-maps.v1.compact.json",
     ".github/workflows/pages.yml",
-    "ASSET-MANIFEST.json"
+    "ASSET-MANIFEST.json",
+    "story-data.js",
+    "story-scene.js",
+    "story-scene.css",
+    "story-ui.js",
+    "story-ui.css"
   ],
   "newBinaryFiles": [],
   "originalArchivesModified": false,
@@ -33,13 +38,13 @@
   "files": [
     {
       "path": "index.html",
-      "bytes": 5449,
-      "sha256": "07a586efe77cea37a279e0fa91ca5c0c18cfb060a0cf49c184ed727428858ef6"
+      "bytes": 6044,
+      "sha256": "06c78ad9ae367f918905b7a9a42667003188a5414c04eb934fd446273bc4dd13"
     },
     {
       "path": "style.css",
-      "bytes": 33101,
-      "sha256": "48e0aaa3f3ce4063b7f635dc157e495d0d383c2acb42fec7019db34574d0eb38"
+      "bytes": 33929,
+      "sha256": "ebf40fc0ffefb7b0f31483a80cf6edfe19423c8841c7d299c89b38bf6453bbc1"
     },
     {
       "path": "engine-styles.css",
@@ -68,8 +73,8 @@
     },
     {
       "path": "app.js",
-      "bytes": 24087,
-      "sha256": "7f38d3e97af0e1c682fbe41b82f9b7970b462f5740e6ce01840556fd6afaeeee"
+      "bytes": 26278,
+      "sha256": "e6e3935b826c81cae5e6e81fac09398366a57f161118ca52e76fd9d9baa1043c"
     },
     {
       "path": "figures-data.js",
@@ -83,8 +88,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 1434,
-      "sha256": "6cce0babde2004624942e780f219c22ab3718042511941e235de2f6dfb8375ee"
+      "bytes": 2379,
+      "sha256": "da027dc7478f33b6cb428792708db9b2487a5a053c5e10e7f512a33657f59c6b"
     },
     {
       "path": ".nojekyll",
@@ -98,11 +103,36 @@
     },
     {
       "path": ".github/workflows/pages.yml",
-      "bytes": 1076,
-      "sha256": "7d22fac3f9e9959ffd8445a7288114913afc9505bfa48ac59372f4e47c2c14d3"
+      "bytes": 1112,
+      "sha256": "f099cbf1ac129c25bce9c4f29f69c7fec83e36696b14d8ecc4d93f9856aa2038"
+    },
+    {
+      "path": "story-data.js",
+      "bytes": 20595,
+      "sha256": "55a33aa955aae7cdc97f28406f291160a850c2e25b0ff23f1a1ddc7f04bd9998"
+    },
+    {
+      "path": "story-scene.js",
+      "bytes": 32876,
+      "sha256": "5fa50d269202456b58e8bb1cf6f2bbaa4a6da90999dcdb54ecf05c0c046775a5"
+    },
+    {
+      "path": "story-scene.css",
+      "bytes": 1235,
+      "sha256": "77a59a9925335af791cad432979a54c6686a77e4fae99f6a7760bec934b70ec1"
+    },
+    {
+      "path": "story-ui.js",
+      "bytes": 16142,
+      "sha256": "92af160b6844398419bc8e61f3d7b32d2be27a4d9c43c97c6ec0c278a08a3a23"
+    },
+    {
+      "path": "story-ui.css",
+      "bytes": 10990,
+      "sha256": "6fc7a89ed6f8cd1846babae9c3399948fba5fcc3f4ee6b4af2fde8cc5ea0cf4a"
     }
   ],
-  "revision": "20261024-ios-v2",
+  "revision": "20261024-story-v3",
   "independentProjectData": true,
   "motion": {
     "kind": "camera",
@@ -110,5 +140,20 @@
     "autoplay": false,
     "respectsReducedMotion": true,
     "sourceCoordinatesChanged": false
+  },
+  "animatedStory": {
+    "chapters": 8,
+    "durationSeconds": 120,
+    "autoplayOnPageLoad": false,
+    "startOnFollowProcessClick": true,
+    "sourceAtomicModels": true,
+    "qualitativeIllustration": true,
+    "reducedMotion": true,
+    "inPageCaptions": true
+  },
+  "vendorHashes": {
+    "three.module.js": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+    "three.core.js": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+    "THREE-LICENSE.txt": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
   }
 }
