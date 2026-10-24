@@ -1,23 +1,105 @@
 {
-  "assets": {
-    "assets/dhfr-display-provenance.json": "70f81660ef1c2fd60a586e63a16984b0a708651cbc99f9090d6b965100f9a81f",
-    "assets/dhfr-gs-connected.pdb": "726d5828f685de3bb83d5370b2296a891caef991bb02d0f6627b8b94a7378144",
-    "assets/dhfr-gs.pdb": "0f041098449919e145a6dd34c700d0fcfa6bf72b84cfd81c8eb0d1be64fef617",
-    "assets/dhfr-isog-connected.pdb": "4322fbcf031733d17a8e409c2bbbf0910e759e8d8aec3628fb586c1c99c0f45b",
-    "assets/dhfr-isog.pdb": "d2df97bcd5a5ca6e3ddf1ead91a9c8be8f7981224b5d526274f3c51429d0d1f3",
-    "assets/NGL-LICENSE.txt": "146ec981abe68ac72ee133565f9c83928fa804c4c89ce04b248fa6f6ec0cbad4",
-    "assets/ngl.js": "be8d4b16f1d73458efd70d2a3319ef2888fb6fa821732c319a99ff43a8e4f7e0"
+  "project": "dhfr",
+  "liveUrl": "https://alexw4123.github.io/dhfr-cinematic-viewer/",
+  "defaultProject": "dhfr",
+  "sourceCoordinatesModified": false,
+  "sourceHashes": {
+    "dhfr-gs-connected.pdb": "726d5828f685de3bb83d5370b2296a891caef991bb02d0f6627b8b94a7378144",
+    "dhfr-isog-connected.pdb": "4322fbcf031733d17a8e409c2bbbf0910e759e8d8aec3628fb586c1c99c0f45b",
+    "ngl.js": "be8d4b16f1d73458efd70d2a3319ef2888fb6fa821732c319a99ff43a8e4f7e0"
   },
-  "sourceModelsPreserved": true,
-  "applicationAnimation": {
-    "module": "application-tour.js",
-    "style": "application-tour.css",
-    "description": "Delivery, cell entry, the DHFR target, and cancer relevance. IM injection is an educational route example; GS/isog have no established administration route or therapeutic effect.",
-    "geometry": "Code-built explanatory geometry plus source-coordinate molecular context. Visual transforms change display placement only.",
-    "sourceCoordinatesModified": false,
-    "simulationEvidence": false,
-    "autoplay": false,
-    "controls": "Four user-selected stages, replay current stage, keyboard inspection; system reduced-motion preference shows still scenes.",
-    "renderer": "Existing pinned Three.js files from unchanged assets.zip, vendor/three.module.js and vendor/three.core.js."
-  }
+  "expectedBonds": 3195,
+  "newTextFiles": [
+    "index.html",
+    "style.css",
+    "engine-styles.css",
+    "content.js",
+    "application-data.js",
+    "application-ui.js",
+    "molecule-engine.js",
+    "app.js",
+    "figures-data.js",
+    "site-config.js",
+    "README.md",
+    ".nojekyll",
+    "assets/selection-maps.v1.compact.json",
+    ".github/workflows/pages.yml",
+    "ASSET-MANIFEST.json"
+  ],
+  "newBinaryFiles": [],
+  "originalArchivesModified": false,
+  "noNewBackend": true,
+  "projectSwitch": "Cross-links the two independent viewer sites",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 5358,
+      "sha256": "26d483f7f81b88e13b862af956b4fb4deab8be9511279092942a7cc89143e52b"
+    },
+    {
+      "path": "style.css",
+      "bytes": 19068,
+      "sha256": "b3613ea378c46789f50b96dc05506d2dc706a5f69b67501831e919aff9868251"
+    },
+    {
+      "path": "engine-styles.css",
+      "bytes": 472,
+      "sha256": "6da08be91929f1d81e39c90e7795148b2cc12979e25412bd7a8c52d021d374db"
+    },
+    {
+      "path": "content.js",
+      "bytes": 53810,
+      "sha256": "96188843f134559ae2465a1c33b699d45cb2c6b42b713c519cf9f22c4c6fc2f4"
+    },
+    {
+      "path": "application-data.js",
+      "bytes": 9694,
+      "sha256": "436025d112db8b5cbe7e1f93f7e7c3e6cf67eca3d1aa6f80feee952a21297094"
+    },
+    {
+      "path": "application-ui.js",
+      "bytes": 3392,
+      "sha256": "b362dacced1d8d847854501bc3eea70909af740aa1cce79e7686f46cfa83e404"
+    },
+    {
+      "path": "molecule-engine.js",
+      "bytes": 23717,
+      "sha256": "3bc56c68ea82cd381fc278f008860f34a4e850e9bc549ecf2f0de2d2b952a23f"
+    },
+    {
+      "path": "app.js",
+      "bytes": 22469,
+      "sha256": "6eb9814c3cb36214cc3d0efaa226d1cf6f34767b674df20cdcca205897e5fe16"
+    },
+    {
+      "path": "figures-data.js",
+      "bytes": 4957,
+      "sha256": "f499b233ca2545c269a5d4eddb1b2bafc16a744fa6b67eddbe2fb0898bd521cc"
+    },
+    {
+      "path": "site-config.js",
+      "bytes": 197,
+      "sha256": "0387867d6058498300af2d0def874aca542308677cdb1e1385709a97987e5160"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1226,
+      "sha256": "e5b9f3807109908e181d127440b4d83dd903b4fe62e475c7068350b5df06820a"
+    },
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "assets/selection-maps.v1.compact.json",
+      "bytes": 59751,
+      "sha256": "d4054e5fead7e39d09da54bd6dd1ca898d9f4fa19f71bf57b49e97113077865c"
+    },
+    {
+      "path": ".github/workflows/pages.yml",
+      "bytes": 1076,
+      "sha256": "7d22fac3f9e9959ffd8445a7288114913afc9505bfa48ac59372f4e47c2c14d3"
+    }
+  ]
 }
