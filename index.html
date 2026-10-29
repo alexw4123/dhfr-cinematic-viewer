@@ -1,66 +1,92 @@
 <!doctype html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="color-scheme" content="light"><title>DHFR models | Fairfield University</title>
-  <meta name="description" content="Explore GS and isog models at human DHFR, with an animated explanation of folate chemistry, DNA synthesis and the next experiments.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>DHFR | Fairfield University</title>
+  <meta name="description" content="Dihydrofolate reductase (DHFR) helps maintain the folates cells need to make DNA. Explore guanosine and isoguanosine models from Fairfield University.">
   <meta name="author" content="Alexander Wong">
-  <meta name="theme-color" content="#f7f8fb">
+  <meta name="theme-color" content="#0b0f14">
+  <meta name="color-scheme" content="dark light">
   <link rel="canonical" href="https://alexw4123.github.io/dhfr-cinematic-viewer/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="DHFR models | Fairfield University">
-  <meta property="og:description" content="Explore GS and isog models at human DHFR, with an animated explanation of folate chemistry, DNA synthesis and the next experiments.">
+  <meta property="og:title" content="DHFR | Fairfield University">
+  <meta property="og:description" content="Dihydrofolate reductase, two nucleopeptide models, and the experiments needed to test them. Smith-Carpenter Lab, in collaboration with Dr. Phelan.">
   <meta property="og:site_name" content="Smith-Carpenter Lab | Fairfield University">
   <meta property="og:url" content="https://alexw4123.github.io/dhfr-cinematic-viewer/">
-  <meta property="og:image" content="https://alexw4123.github.io/dhfr-cinematic-viewer/assets/share-card.jpg?v=20261024-clear-v5-final">
+  <meta property="og:image" content="https://alexw4123.github.io/dhfr-cinematic-viewer/assets/share-card.jpg?v=20261028-dhfr-v6">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="DHFR models, Fairfield University lab credit and a projection of the actual atomic structural model.">
+  <meta property="og:image:alt" content="DHFR research models, Fairfield University and Smith-Carpenter Lab.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DHFR models | Fairfield University">
-  <meta name="twitter:description" content="Explore GS and isog models at human DHFR, with an animated explanation of folate chemistry, DNA synthesis and the next experiments.">
-  <meta name="twitter:image" content="https://alexw4123.github.io/dhfr-cinematic-viewer/assets/share-card.jpg?v=20261024-clear-v5-final">
-  <link rel="stylesheet" href="style.css?v=20261024-clear-v5-final"><link rel="stylesheet" href="engine-styles.css?v=20261024-clear-v5-final">
-  <link rel="stylesheet" href="story-ui.css?v=20261024-clear-v5-final"><link rel="stylesheet" href="story-scene.css?v=20261024-clear-v5-final">
-  <link rel="stylesheet" href="iphone-polish.css?v=20261024-clear-v5-final">
-  <script defer src="story-data.js?v=20261024-clear-v5-final"></script><script defer src="story-scene.js?v=20261024-clear-v5-final"></script><script defer src="story-ui.js?v=20261024-clear-v5-final"></script>
-  <script defer src="site-config.js?v=20261024-clear-v5-final"></script>
-  <script defer src="assets/ngl.js?v=20261024-clear-v5-final"></script><script defer src="content.js?v=20261024-clear-v5-final"></script>
-  <script defer src="application-data.js?v=20261024-clear-v5-final"></script><script defer src="application-ui.js?v=20261024-clear-v5-final"></script>
-  <script defer src="figures-data.js?v=20261024-clear-v5-final"></script>
-  <script defer src="molecule-engine.js?v=20261024-clear-v5-final"></script><script defer src="app.js?v=20261024-clear-v5-final"></script>
-  <link rel="stylesheet" href="page-layout.css?v=20261024-clear-v5-final">
+  <meta name="twitter:title" content="DHFR | Fairfield University">
+  <meta name="twitter:description" content="What dihydrofolate reductase does, why its chemistry matters, and how GS and isog models compare.">
+  <meta name="twitter:image" content="https://alexw4123.github.io/dhfr-cinematic-viewer/assets/share-card.jpg?v=20261028-dhfr-v6">
+  <link rel="stylesheet" href="research-v6.css?v=20261028-dhfr-v6">
+  <script defer src="assets/ngl.js"></script>
+  <script defer src="content.js?v=20261028-dhfr-v6"></script>
+  <script defer src="application-data.js?v=20261028-dhfr-v6"></script>
+  <script defer src="molecule-engine.js?v=20261028-dhfr-v6"></script>
+  <script defer src="research-sections.js?v=20261028-dhfr-v6"></script>
+  <script defer src="app.js?v=20261028-dhfr-v6"></script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to research</a>
-  <header class="site-header">
-    <a class="site-brand" href="#overview"><span>Fairfield University</span><small>Smith-Carpenter Lab</small></a>
-    <nav id="section-nav" aria-label="Page sections"><a href="#overview" aria-current="page">Overview</a><a href="#how-it-works">How it works</a><a href="#research">Research &amp; results</a></nav>
+  <a class="skip-link" href="#main">Skip to research</a>
+  <header class="site-header" id="site-header">
+    <a class="site-brand" href="#overview" aria-label="Fairfield University, Smith-Carpenter Lab"><span><b>Fairfield</b> University</span><small>Smith-Carpenter Lab</small></a>
+    <nav aria-label="Page sections"><a href="#overview" aria-current="page">Overview</a><a href="#models">Models</a><a href="#research">Research</a></nav>
   </header>
   <main id="main" tabindex="-1">
-    <header id="overview" class="project-heading"><span id="project-label" class="eyebrow"></span><h1 id="project-title">DHFR models</h1><p id="project-credit" class="credit"></p><details id="project-about" class="project-about"><summary>Full research title</summary><p id="full-project-title"></p></details></header>
-    <section class="overview-intro" aria-labelledby="question"><h2 id="question"></h2><p id="intro-copy"></p></section>
-    <section id="atomic-section" class="page-section" aria-labelledby="atomic-heading">
-      <header class="section-heading"><h2 id="atomic-heading">Atomic structure</h2><p>Drag to rotate. Select a part to see what it does.</p></header>
-      <div class="overview-grid">
-        <section class="molecule-card" aria-labelledby="molecule-title">
-          <div class="molecule-top"><h3 id="molecule-title"></h3><div class="model-switch" id="model-switch" aria-label="Choose model"><button data-model="gs" aria-pressed="true">GS</button><button data-model="isog" aria-pressed="false">isog</button></div></div>
-          <div class="viewer-wrap"><div id="molecular-viewport" tabindex="0" role="img" aria-label="Interactive atomic structure. Arrow keys rotate, plus and minus zoom, Home resets."></div><div id="load-state" class="load-state" role="status"><span id="load-message">Loading the model…</span><button id="retry-load" hidden>Try again</button></div></div>
-          <div class="viewer-toolbar"><div class="representation" aria-label="Molecular representation"><button data-mode="atomic" aria-pressed="true">Atoms</button><button data-mode="secondary" aria-pressed="false">Secondary structure</button></div><div class="camera"><button id="zoom-out" aria-label="Zoom out">−</button><button id="zoom-in" aria-label="Zoom in">+</button><button id="reset-view">Reset</button></div></div>
-          <details class="viewer-details"><summary>Model details</summary><div class="viewer-meta"><span id="structure-counts"></span><p id="structure-caption"></p><div class="advanced-view"><button id="motion-toggle" type="button" aria-pressed="false">Rotate view</button><span id="motion-status" class="visually-hidden" role="status" aria-live="polite"></span></div></div></details>
-        </section>
-        <aside class="structure-notes">
-          <section class="component-card"><div class="component-head"><h3>Explore the structure</h3><label class="isolate"><input type="checkbox" id="isolate"> Isolate</label></div><div id="component-buttons" class="component-buttons" aria-label="Highlight a component"></div><div id="component-caption" aria-live="polite"><h4 id="selection-title"></h4><p id="selection-copy"></p><small id="selection-count" class="visually-hidden"></small></div></section>
-          <section class="next-card"><h3>Next experiment</h3><p id="next-copy"></p></section>
-          <button id="return-to-story" class="return-story" hidden>Back to How it works ↓</button>
-        </aside>
+    <section class="hero" id="overview" aria-labelledby="hero-title">
+      <div class="hero-copy"><h1 id="hero-title">DHFR</h1><p class="hero-expansion">Dihydrofolate reductase</p><p class="hero-intro">An enzyme that helps cells maintain the folates needed to make DNA.</p></div>
+      <div class="molecule-slot hero-molecule" data-slot="hero">
+        <img class="source-image" src="assets/dhfr-surface-source.png" alt="Source GS complex: silver human DHFR surface, rose nucleopeptide model, and violet NADPH" width="2400" height="1800" fetchpriority="high">
+        <div id="molecular-viewport" class="molecular-viewport" tabindex="-1" role="img" aria-label="Source model of human dihydrofolate reductase"></div>
+      </div>
+      <p class="hero-caption">Human DHFR <span aria-hidden="true">·</span> <span id="hero-model-label">GS model</span></p>
+      <div id="opening-load-failure" class="opening-load-failure" role="alert" hidden><p>The live model could not load. This is the GS source image.</p><button id="retry-opening" type="button">Try again</button></div>
+      <a class="primary-action" href="#models">Compare models</a>
+      <button class="hero-atoms" id="hero-atoms" type="button" aria-pressed="false">Atoms</button>
+      <p class="hero-credit"><span>Alexander Wong</span><span>In collaboration with Dr. Phelan</span></p>
+      <p id="model-load-status" class="sr-only" role="status" aria-live="polite">Loading the verified source model.</p>
+    </section>
+    <section class="how-section light-section" id="how-it-works" aria-labelledby="how-title">
+      <header class="section-heading"><h2 id="how-title">How DHFR works</h2><p>Dihydrofolate reductase, or DHFR, helps recycle the folates used to make the building blocks of DNA.</p></header>
+      <div class="how-layout">
+        <div class="how-visual">
+          <div class="molecule-slot how-molecule" data-slot="how"><img class="source-image" src="assets/dhfr-surface-source.png" alt="GS complex shown as a structural reference" width="2400" height="1800" loading="lazy"></div>
+          <p class="how-view-label" id="how-view-label">Human DHFR</p>
+          <p class="reaction-equation" id="reaction-equation" hidden>DHF + NADPH + H⁺ <span aria-label="yields">→</span> THF + NADP⁺</p>
+          <div class="chapter-navigation" id="chapter-navigation" aria-label="Choose an explanation step"></div>
+          <button id="resume-guided" class="text-button" type="button" hidden>Resume guided view</button>
+          <p class="how-note">Scroll to follow the chemistry, or choose a step.</p>
+        </div>
+        <div class="chapter-list" id="chapter-list"></div>
       </div>
     </section>
-    <section id="how-it-works" class="page-section" aria-labelledby="how-heading"><header class="section-heading"><h2 id="how-heading">How it works</h2><p>Follow DHFR chemistry through inhibition and the supply needed for DNA synthesis.</p></header><div id="story-host"></div></section>
-    <section id="research" class="page-section" aria-labelledby="research-heading"><header class="section-heading"><h2 id="research-heading">Research &amp; results</h2><p id="relevance-copy"></p></header><div id="section-content"></div></section>
-    <footer><span>Smith-Carpenter Lab · Fairfield University</span><a href="#research-sources">Sources and methods</a></footer>
+    <section class="models-section light-section" id="models" aria-labelledby="models-title">
+      <header class="section-heading"><p class="section-kicker">The molecular comparison</p><h2 id="models-title">What changes when the base changes?</h2><p>Guanosine (GS) and isoguanosine (isog) share the same Phe-Glu peptide. Their amino and oxo groups exchange positions on the base.</p></header>
+      <div class="model-choices" aria-label="Choose a model"><button type="button" data-model="gs" aria-pressed="true">Guanosine <span>GS</span></button><button type="button" data-model="isog" aria-pressed="false">Isoguanosine <span>isog</span></button></div>
+      <div class="model-explorer">
+        <div class="explorer-main">
+          <div class="molecule-slot model-molecule" data-slot="models"><img class="source-image" src="assets/dhfr-surface-source.png" alt="Source GS complex with human DHFR and modeled NADPH" width="2400" height="1800" loading="lazy"></div>
+          <div class="explorer-toolbar"><div class="mode-options" aria-label="Molecular representation"><button type="button" data-mode="surface" aria-pressed="true">Surface</button><button type="button" data-mode="atomic" aria-pressed="false">Atoms</button><button type="button" data-mode="secondary" aria-pressed="false">Secondary structure</button></div><button type="button" id="interaction-toggle" aria-pressed="false">Touch controls</button></div>
+          <p class="interaction-hint" id="interaction-hint">Choose a part below. Enable touch controls to rotate or select atoms.</p>
+          <div id="load-failure" class="load-failure" hidden><p>The live structure could not load. The GS source image and research text remain available.</p><button id="retry-load" type="button">Try again</button><a href="assets/dhfr-gs-connected.pdb" download>Download the GS model</a></div>
+        </div>
+        <aside class="explorer-caption">
+          <div class="component-options" id="component-options" aria-label="Highlight a molecular component"><button type="button" data-component="all" aria-pressed="true">Whole complex</button><button type="button" data-component="protein" aria-pressed="false">DHFR</button><button type="button" data-component="nadph" aria-pressed="false">NADPH</button><button type="button" data-component="candidate" aria-pressed="false">Model</button><button type="button" data-component="base" aria-pressed="false">Base</button></div>
+          <div class="selection-caption" aria-live="polite"><h3 id="selection-title">The prepared complex</h3><p id="selection-copy">Human DHFR, modeled NADPH, and the complete GS nucleopeptide. These are starting coordinates, with contacts that still need refinement.</p></div>
+          <div class="explorer-controls"><label><input type="checkbox" id="isolate" disabled> Isolate selection</label><button type="button" id="reset-view">Reset view</button></div>
+          <details class="model-details"><summary>More controls and model details</summary><div class="detail-controls"><button type="button" id="zoom-in">Zoom in</button><button type="button" id="zoom-out">Zoom out</button></div><div class="component-options"><button type="button" data-component="ribose">Ribose</button><button type="button" data-component="linker">Linker</button><button type="button" data-component="phenylalanine">Phe</button><button type="button" data-component="glutamate">Glu</button><button type="button" data-component="changedBaseGroups">Changed groups</button></div><p id="structure-counts">Each complex contains 3,153 atoms and 3,195 explicit bonds.</p><p>The surface view cuts away part of the protein to reveal the pocket. No source coordinates are changed. Atoms and secondary structure use the complete model.</p><p>Arrow keys rotate, + and − zoom, and Home resets when touch controls are enabled and the structure has keyboard focus.</p></details>
+        </aside>
+      </div>
+      <p class="model-context">These prepared poses guide the next comparisons. Their appearance does not establish binding strength or enzyme inhibition.</p>
+    </section>
+    <section class="research-section light-section" id="research" aria-labelledby="research-title"><header class="section-heading"><h2 id="research-title">The research</h2><p>What has been prepared, what remains unresolved, and how the next experiments answer different questions.</p></header><div id="research-content"></div></section>
+    <footer class="site-footer"><span>Smith-Carpenter Lab <span aria-hidden="true">·</span> Fairfield University</span><a href="#research-sources">Sources and methods</a></footer>
   </main>
-  <dialog id="figure-dialog"><button id="close-figure" aria-label="Close figure">Close ×</button><img id="figure-image" alt=""><p id="figure-caption"></p><a id="figure-source" target="_blank" rel="noopener">Open source ↗</a></dialog>
+  <noscript><p class="noscript-note">The source images and opening explanation are available without JavaScript. Enable JavaScript to compare the live structures and open the research records.</p></noscript>
 </body>
 </html>

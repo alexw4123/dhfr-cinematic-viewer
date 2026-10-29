@@ -48,12 +48,16 @@
   window.createResearchMolecule = function createResearchMolecule(options) {
     const {project,viewport,onSelection=()=>{},onReady=()=>{},onError=()=>{},onMotion=()=>{}} = options || {};
     if (!['heme','dhfr'].includes(project) || !(viewport instanceof HTMLElement)) throw new Error('A project and molecular viewport are required.');
-    const state = {project,model:project==='heme'?'original-peg2':'gs',mode:'atomic',ready:false,isolated:false,
-      selected:'all',kind:'component',chain:null,position:null,picked:null,sourceHash:null,hashVerified:false};
+    const state = {project,model:project==='heme'?'original-peg2':'gs',mode:project==='dhfr'?'surface':'atomic',ready:false,isolated:false,
+      selected:'all',kind:'component',chain:null,position:null,picked:null,sourceHash:null,hashVerified:false,
+      modelVisible:true,viewPreset:'overview',viewProgress:1,visibleSourceAtomCount:0,
+      surfaceProteinAtomCount:0,surfaceOmittedProteinAtomCount:0};
     let maps,modelMap,stage,component,colorScheme,selectedIndices=[],selectedSet=new Set(),allIndices=[],pocketIndices=[];
     let residueByAtom=new Map(),candidatePartByAtom=new Map(),pendingSelection=null,initialOrientation,generation=0,destroyed=false;
     let lastPick={index:-1,time:0},touchStart=null,resizeObserver,initialTiltApplied=false;
     let secondaryAssignments={}, coordinateFingerprint=null;
+    let viewAnchors=null;
+    let pocketOpenProtein=new Set(),reactionOpenProtein=new Set(),proteinHeavyCount=0;
     let motionFrame=null,motionToken=0,motionResolve=null,motionState='idle',motionProgress=0;
     const reducedMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)');
     viewport.classList.add('research-molecule');
@@ -74,7 +78,11 @@
         selectedIndices:[...selectedIndices],selectedAtomCount:selectedIndices.length,chain:state.chain,position:state.position,
         representation:state.mode,isolated:state.isolated,orientation:orientation(),sourceHash:state.sourceHash,
         hashVerified:state.hashVerified,coordinateFingerprint,secondaryStructureAssignments:{...secondaryAssignments},lastPickedAtom:state.picked,
-        motionState,motionProgress,motionKind:'camera'};
+        motionState,motionProgress,motionKind:'camera',modelVisible:state.modelVisible,
+        visibleSourceAtomCount:state.visibleSourceAtomCount,viewPreset:state.viewPreset,viewProgress:state.viewProgress,
+        surfaceProteinAtomCount:state.surfaceProteinAtomCount,surfaceOmittedProteinAtomCount:state.surfaceOmittedProteinAtomCount,
+        surfaceCutaway:state.mode==='surface'&&!state.isolated?'View-facing pocket cutaway':'none',
+        surfaceMethod:'Source atom van der Waals envelope'};
     }
     function reflect() {
       const d=diagnostics();
@@ -98,6 +106,14 @@
       viewport.dataset.motionState=d.motionState;
       viewport.dataset.motionProgress=String(d.motionProgress);
       viewport.dataset.motionKind=d.motionKind;
+      viewport.dataset.modelVisible=String(d.modelVisible);
+      viewport.dataset.visibleSourceAtomCount=String(d.visibleSourceAtomCount);
+      viewport.dataset.viewPreset=d.viewPreset;
+      viewport.dataset.viewProgress=String(d.viewProgress);
+      viewport.dataset.surfaceProteinAtomCount=String(d.surfaceProteinAtomCount);
+      viewport.dataset.surfaceOmittedProteinAtomCount=String(d.surfaceOmittedProteinAtomCount);
+      viewport.dataset.surfaceCutaway=d.surfaceCutaway;
+      viewport.dataset.surfaceMethod=d.surfaceMethod;
     }
     function reportMotion(status,progress,reason) {
       motionState=status;motionProgress=progress;
@@ -164,20 +180,42 @@
         const chain=maps.heme.chains.find(c=>c.groups.capLinker.atomIndexRanges.some(([a,b])=>i>=a&&i<=b));
         return chain?0xba9aed:0x56d5e9;
       }
-      if (i>=3087) return state.model==='gs'?0xfb86ae:0xc3a3ff;
-      if (i>=3013) return 0xf1c272;
+      if (i>=3087) return state.model==='gs'?0xe87fa0:0xc2a4e4;
+      if (i>=3013) return 0x9c83dc;
+      if(state.mode==='surface')return 0x9aa6b2;
       const colors={C:0xa8bbce,N:0x97bed0,O:0xd3a0ad,S:0xe5c987,H:0x8c9fb3};
       return colors[atom.element]||0xa8bbce;
     }
     function render() {
       if (!state.ready || !component) return;
       component.removeAllRepresentations();
-      const allowed=state.isolated?selectedIndices:allIndices;
+      const allowed=(state.isolated?selectedIndices:allIndices).filter(i=>project!=='dhfr'||state.modelVisible||i<3087);
+      state.visibleSourceAtomCount=allowed.length;
+      state.surfaceProteinAtomCount=0;state.surfaceOmittedProteinAtomCount=0;
       const atomic={colorScheme,multipleBond:'symmetric',radiusScale:project==='heme'?0.46:0.44,
         aspectRatio:2,bondSpacing:0.75,quality:'high',opacity:1,disablePicking:false};
       if (state.mode==='atomic') {
         // The single complete representation retains the source's Fe–His cross-component bonds.
         component.addRepresentation('ball+stick',{...atomic,sele:atomSelection(allowed)});
+      } else if(state.mode==='surface'&&project==='dhfr') {
+        const cutaway=state.modelVisible?pocketOpenProtein:reactionOpenProtein;
+        const protein=allowed.filter(i=>i<3013&&(state.isolated||cutaway.has(i)));
+        state.surfaceProteinAtomCount=protein.length;
+        state.surfaceOmittedProteinAtomCount=state.isolated?0:proteinHeavyCount-protein.length;
+        // The union of exact van der Waals atom spheres is the atom envelope
+        // used by the source render. It avoids asynchronous meshing rebuilds
+        // when chapters or component highlights change quickly on a phone.
+        if(protein.length)component.addRepresentation('spacefill',{
+          sele:atomSelection(protein)+' and not _H',radiusType:'vdw',radiusScale:1,
+          colorScheme,quality:'high',opacity:state.selected==='all'||state.selected==='protein'?0.92:0.64,
+          opaqueBack:false,roughness:0.62,metalness:0.04,disablePicking:false
+        });
+        const accessories=allowed.filter(i=>i>=3013);
+        const highlightedProtein=state.selected==='all'||state.selected==='protein'?[]:selectedIndices.filter(i=>protein.includes(i));
+        const atomicIndices=[...new Set([...accessories,...highlightedProtein])];
+        if(atomicIndices.length)component.addRepresentation('ball+stick',{
+          ...atomic,radiusScale:0.55,sele:atomSelection(atomicIndices)+' and not _H',roughness:0.42
+        });
       } else {
         const protein=allowed.filter(i=>project==='heme'?residueByAtom.has(i):i<3013);
         if (protein.length) component.addRepresentation('cartoon',{sele:atomSelection(protein),colorScheme,quality:'high',
@@ -259,8 +297,9 @@
     }
     function makeStage() {
       if(!window.NGL)throw new Error('The molecular viewer library is unavailable.');
-      stage=new NGL.Stage(host,{backgroundColor:'#0a1728',quality:'high',sampleLevel:0,cameraType:'perspective',cameraFov:36,
-        lightIntensity:1.1,ambientIntensity:0.72,clipNear:0,clipFar:100,fogNear:75,fogFar:100,tooltip:false});
+      stage=new NGL.Stage(host,{backgroundColor:project==='dhfr'?'#0b0f14':'#0a1728',quality:'high',sampleLevel:0,
+        cameraType:project==='dhfr'?'orthographic':'perspective',cameraFov:36,
+        lightIntensity:1.15,ambientIntensity:0.66,clipNear:0,clipFar:100,fogNear:100,fogFar:100,tooltip:false});
       const canvas=stage.viewer.renderer.domElement;
       canvas.setAttribute('role','img');
       canvas.setAttribute('aria-label','Molecular structure. Arrow keys rotate, plus and minus zoom, and Home resets the camera.');
@@ -291,6 +330,86 @@
       const hash=Array.from(new Uint8Array(digest),n=>n.toString(16).padStart(2,'0')).join('');
       if(hash!==expectedHash)throw new Error('The molecular file differs from the verified selection map.');
       return {buffer,hash};
+    }
+    function captureViewAnchors() {
+      if(project!=='dhfr'||viewAnchors)return;
+      // The source-render camera basis maps world coordinates into this view.
+      // It changes the camera only; no structure coordinate or topology is edited.
+      const sourceRotation=new NGL.Matrix4().set(
+        0.12780374142849793,-0.22338827240451162,0.966314588231496,0,
+        0.14875396511829897,0.967600912518159,0.20401159760074922,0,
+        -0.9805806756909201,0.11766968108291041,0.1568929081105472,0,
+        0,0,0,1
+      );
+      // NGL looks from negative Z; the orthographic source render looks from
+      // positive Z. A half-turn around Y preserves the source screen axes.
+      const cameraFlip=new NGL.Matrix4().makeRotationY(Math.PI);
+      const rotation=cameraFlip.multiply(sourceRotation.clone());
+      const inverse=rotation.clone().invert();
+      const positions=[];
+      component.structure.eachAtom(atom=>positions.push(new NGL.Vector3(atom.x,atom.y,atom.z).applyMatrix4(rotation)));
+      function anchor(indices) {
+        const bounds=new NGL.Box3();
+        indices.forEach(i=>bounds.expandByPoint(positions[i]));
+        return {center:bounds.getCenter(new NGL.Vector3()).applyMatrix4(inverse),
+          spanX:bounds.max.x-bounds.min.x+5.4,spanY:bounds.max.y-bounds.min.y+5.4};
+      }
+      // Anchors are captured once from the original loaded complex and retained
+      // across GS/isog switches so the comparison cannot recenter itself.
+      viewAnchors={rotation:rotation.clone(),sourceRotation:sourceRotation.clone(),
+        overview:anchor(allIndices.filter(i=>i<3013)),
+        pocket:anchor(allIndices.filter(i=>i>=3013)),
+        reaction:anchor(allIndices.filter(i=>i>=3013&&i<3087))};
+    }
+    function calculateSurfaceOpening() {
+      if(project!=='dhfr'||!viewAnchors)return;
+      const protein=[],accessories=[];
+      const radii={C:1.7,N:1.55,O:1.52,S:1.8,P:1.8};
+      component.structure.eachAtom(atom=>{
+        if(atom.element==='H')return;
+        const p=new NGL.Vector3(atom.x,atom.y,atom.z).applyMatrix4(viewAnchors.sourceRotation);
+        const entry={index:atom.index,x:p.x,y:p.y,z:p.z,radius:radii[atom.element]||1.7};
+        if(atom.index<3013)protein.push(entry);else accessories.push(entry);
+      });
+      proteinHeavyCount=protein.length;
+      const cofactor=accessories.filter(atom=>atom.index<3087);
+      const open=ligands=>new Set(protein.filter(atom=>!ligands.some(ligand=>{
+        const dx=atom.x-ligand.x,dy=atom.y-ligand.y;
+        // A view-facing corridor reveals the original ligand/cofactor geometry.
+        // Only surface membership changes; the complete PDB remains untouched.
+        return atom.z+atom.radius>=ligand.z-0.3&&dx*dx+dy*dy<=(atom.radius+2.0)**2;
+      })).map(atom=>atom.index));
+      pocketOpenProtein=open(accessories);
+      reactionOpenProtein=open(cofactor);
+    }
+    function setViewPreset(rawName,{progress=1}={}) {
+      const aliases={enzyme:'overview',models:'pocket',inhibition:'reaction'};
+      const name=aliases[rawName]||rawName;
+      if(project!=='dhfr'||!['overview','pocket','reaction'].includes(name))return false;
+      const numeric=Number(progress);
+      const amount=Number.isFinite(numeric)?Math.min(1,Math.max(0,numeric)):1;
+      state.viewPreset=name;state.viewProgress=amount;
+      if(!state.ready||!viewAnchors)return false;
+      stopAnimation('guided-view');
+      const aspect=Math.max(0.2,(stage.viewer.width||host.clientWidth||1)/(stage.viewer.height||host.clientHeight||1));
+      const distance=anchor=>Math.max(anchor.spanY,anchor.spanX/aspect)*0.5/Math.tan(36*Math.PI/360)*1.04;
+      const start=viewAnchors.overview,target=viewAnchors[name];
+      const center=start.center.clone().lerp(target.center,amount);
+      const overviewDistance=distance(start)/1.12;
+      const targetDistance=name==='overview'?overviewDistance:distance(target);
+      const fit=overviewDistance+(targetDistance-overviewDistance)*amount;
+      const matrix=viewAnchors.rotation.clone().scale(new NGL.Vector3(fit,fit,fit));
+      matrix.setPosition(center.negate());
+      stage.viewerControls.orient(matrix);
+      reflect();
+      return true;
+    }
+    function setModelVisibility(value) {
+      if(project!=='dhfr')return false;
+      state.modelVisible=Boolean(value);
+      if(state.ready){render();emitSelection();}
+      else reflect();
+      return true;
     }
     async function loadModel(key) {
       if(destroyed)return;
@@ -329,6 +448,8 @@
         component.structure.eachAtom(atom=>{if(atom.index===0||atom.index===Math.floor(allIndices.length/2)||atom.index===allIndices.length-1)fingerprint.push([atom.index,atom.x,atom.y,atom.z]);});
         coordinateFingerprint=JSON.stringify(fingerprint);
         state.sourceHash=hash;state.hashVerified=true;state.ready=true;
+        captureViewAnchors();
+        calculateSurfaceOpening();
         const requested=pendingSelection||previousSelection;pendingSelection=null;
         if(requested.chain)setResidue(requested.chain,requested.position);
         else if(!setComponent(requested.key))setComponent('all');
@@ -336,6 +457,7 @@
         if(preserve)stage.viewerControls.orient(preserve);
         else {
           component.autoView(0);
+          if(project==='dhfr')setViewPreset(state.viewPreset,{progress:state.viewProgress});
           // The deposited heme plane is initially edge-on. Tilt the camera once for the opening view;
           // all coordinates remain untouched, and later selections/modes keep this orientation.
           if(project==='heme'&&!initialTiltApplied){stage.trackballControls.rotate(30,12);initialTiltApplied=true;}
@@ -382,7 +504,13 @@
     function pointerCancel(){touchStart=null;}
     const wheel=()=>stopAnimation('manual-control');
     const motionPreference=event=>{if(event.matches)stopAnimation('reduced-motion');};
-    const resize=()=>{if(stage&&!destroyed){stage.handleResize();reflect();}};
+    const resize=()=>{if(stage&&!destroyed){stage.handleResize();stage.viewer.updateZoom();stage.viewer.requestRender();reflect();}};
+    function refresh() {
+      if(!state.ready||destroyed)return false;
+      const preserve=stage.viewerControls.getOrientation().clone();
+      resize();render();stage.viewerControls.orient(preserve);reflect();
+      return true;
+    }
     viewport.addEventListener('keydown',onKey);
     viewport.addEventListener('pointerdown',pointerDown);
     viewport.addEventListener('pointerup',pointerUp);
@@ -394,9 +522,9 @@
     const api={
       setComponent,setResidue,
       setModel:key=>loadModel(key),
-      setMode(mode){if(!['atomic','secondary'].includes(mode))return false;stopAnimation('representation-change');state.mode=mode;if(state.ready){render();emitSelection();}return true;},
+      setMode(mode){if(!['atomic','secondary','surface'].includes(mode)||(mode==='surface'&&project!=='dhfr'))return false;stopAnimation('representation-change');state.mode=mode;if(state.ready){render();emitSelection();}return true;},
       isolate(value){stopAnimation('selection');state.isolated=Boolean(value)&&state.selected!=='all';if(state.ready){render();emitSelection();}},
-      zoom,rotate,reset,animateModel,stopAnimation,getDiagnostics:diagnostics,
+      zoom,rotate,reset,animateModel,stopAnimation,setViewPreset,setModelVisibility,resize,refresh,getDiagnostics:diagnostics,
       destroy(){if(destroyed)return;stopAnimation('destroyed');destroyed=true;++generation;resizeObserver?.disconnect();window.removeEventListener('resize',resize);
         viewport.removeEventListener('keydown',onKey);viewport.removeEventListener('pointerdown',pointerDown);
         viewport.removeEventListener('pointerup',pointerUp);viewport.removeEventListener('pointercancel',pointerCancel);

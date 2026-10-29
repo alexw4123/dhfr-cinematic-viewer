@@ -1,13 +1,13 @@
-# DHFR models | Fairfield University
+# DHFR | Fairfield University
 
-Smith-Carpenter Lab research page. The project compares GS and isog nucleopeptide models at human DHFR. It separates current 4M6K-derived preparation, historical technical pilots, and the inhibition/cell experiments to be done with Dr. Phelan’s lab.
+Smith-Carpenter Lab research page by Alexander Wong, in collaboration with Dr. Phelan.
 
-The page opens with an overview, then the actual atomic structure. A five-step, 35-second molecular animation sits underneath. Three links cover Overview, How it works, and Research & results. Background, laboratory records, model versions, analysis, applications and sources open as research records.
+DHFR stands for dihydrofolate reductase. The opening introduces its role in folate chemistry, then a scroll-and-tap explanation leads to a comparison of GS and isog nucleopeptide models. Private laboratory records are cited by title; public studies and unchanged source PDB files are linked.
 
-The animation explains chemistry and uses source atomic coordinates for structural context. It is separate from experimental evidence and authentic saved simulation playback. Details identify which atoms are shown, which reacting species are named explanatory markers, and what remains unmeasured.
+This DHFR-only redesign follows the selected centered molecular opening. A surface view leads into readable science sections. Atoms and coordinate-derived secondary structure remain available. One persistent NGL stage moves between the overview, explanation and model explorer. Camera motion is explanatory and does not simulate binding, inhibition or chemistry.
 
-NGL preserves source atom order and explicit bonds, with inference disabled. Secondary structure comes from the loaded model’s own coordinates. Source SHA256, atom and bond counts are checked. The original website, coordinate files and molecular archives remain unchanged.
+The source coordinates, atom order, explicit connectivity and selection mappings are unchanged. Both complexes contain 3,153 atoms and 3,195 explicit bonds. Files are checked against their original SHA256 hashes and additional bond inference is disabled. The 3,087 context atoms are identical between the two prepared models. Model switches preserve the current camera.
 
-Content was cross-checked against the project notebook, linked project reports and cited primary studies. Reported trajectory findings are identified as reported analysis; this website revision did not recompute raw trajectory statistics. Missing batch measurements are omitted.
+There are no measured inhibition or cell-response results for these compounds in the displayed records. Existing evidence, model preparation and future experiments remain distinct. The new interface uses no backend, research recording widget, autoplay film or human delivery scene.
 
-The static GitHub Pages workflow assembles unchanged molecular/vendor archives with the versioned interface and content. No backend is required. The layout supports small portrait screens, landscape, keyboard navigation and reduced motion. Share cards use actual source coordinates and retain lab/author credits.
+The user approved this working version for DHFR-only publication. The previous version is retained in Git history and an archive branch for rollback. Heme is outside the scope of this release. Use the DHFR-only preparation and verification scripts; shared two-project finalizers must not run.

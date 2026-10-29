@@ -16,7 +16,7 @@ window.RESEARCH_APPLICATIONS = {
     },
     "design": {
       "title": "Change the base, keep the peptide",
-      "text": "GS–Phe–Glu and isog–Phe–Glu retain the same peptide while exchanging the base’s 2-amino/6-oxo and 2-oxo/6-amino groups. This matched comparison asks whether a different arrangement of hydrogen-bond donors and acceptors changes pocket compatibility and measured inhibition.",
+      "text": "GS-Phe-Glu and isog-Phe-Glu retain the same peptide while exchanging the base’s 2-amino/6-oxo and 2-oxo/6-amino groups. This matched comparison asks whether a different arrangement of hydrogen-bond donors and acceptors changes pocket compatibility and measured inhibition.",
       "sources": [
         {
           "title": "Design rationale"

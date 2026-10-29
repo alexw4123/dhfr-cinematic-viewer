@@ -148,10 +148,10 @@ window.RESEARCH_CONTENT = {
       "sequences": [
         {
           "id": "gs",
-          "label": "GS–Phe–Glu",
-          "sequence": "Guanosine–L-Phe–L-Glu",
+          "label": "GS-Phe-Glu",
+          "sequence": "Guanosine-L-Phe-L-Glu",
           "interactive": true,
-          "caption": "Complete 66-atom GS model in its prepared complex. The base, ribose, 5′ carbonyl linker and L-Phe–L-Glu peptide remain connected.",
+          "caption": "Complete 66-atom GS model in its prepared complex. The base, ribose, 5′ carbonyl linker and L-Phe-L-Glu peptide remain connected.",
           "sourceIds": [
             "dhfr-rationale",
             "dhfr-preparation"
@@ -159,8 +159,8 @@ window.RESEARCH_CONTENT = {
         },
         {
           "id": "isog",
-          "label": "isog–Phe–Glu",
-          "sequence": "Isoguanosine–L-Phe–L-Glu",
+          "label": "isog-Phe-Glu",
+          "sequence": "Isoguanosine-L-Phe-L-Glu",
           "interactive": true,
           "caption": "Complete 66-atom isog model with the same peptide and changed base chemistry. Neither compound has a measured inhibition result in the records shown here.",
           "sourceIds": [
@@ -200,7 +200,7 @@ window.RESEARCH_CONTENT = {
           "id": "candidate-design",
           "number": 1,
           "title": "Choose the chemical comparison",
-          "text": "Both models retain L-Phe–L-Glu while guanosine changes to isoguanosine. The base chemistry is the variable in this comparison.",
+          "text": "Both models retain L-Phe-L-Glu while guanosine changes to isoguanosine. The base chemistry is the variable in this comparison.",
           "sources": [
             {
               "id": "dhfr-rationale",
@@ -284,13 +284,13 @@ window.RESEARCH_CONTENT = {
       "fiveModels": [
         {
           "id": "free-gs",
-          "title": "Free GS–Phe–Glu",
+          "title": "Free GS-Phe-Glu",
           "interactive": false,
           "detail": "Documented in the preparation report; no interactive file is supplied here."
         },
         {
           "id": "free-isog",
-          "title": "Free isog–Phe–Glu",
+          "title": "Free isog-Phe-Glu",
           "interactive": false,
           "detail": "Documented in the preparation report; no interactive file is supplied here."
         },
@@ -350,7 +350,7 @@ window.RESEARCH_CONTENT = {
         },
         {
           "title": "What this design changes",
-          "text": "GS–Phe–Glu and isog–Phe–Glu retain the same peptide while exchanging the base’s 2-amino/6-oxo and 2-oxo/6-amino groups. This matched comparison asks whether a different arrangement of hydrogen-bond donors and acceptors changes pocket compatibility and measured inhibition."
+          "text": "GS-Phe-Glu and isog-Phe-Glu retain the same peptide while exchanging the base’s 2-amino/6-oxo and 2-oxo/6-amino groups. This matched comparison asks whether a different arrangement of hydrogen-bond donors and acceptors changes pocket compatibility and measured inhibition."
         }
       ],
       "testQuestions": [
@@ -377,8 +377,8 @@ window.RESEARCH_CONTENT = {
           "title": "DHFR activity comparison",
           "context": "Next laboratory experiment",
           "summary": "Test whether either synthesized compound reduces DHFR activity, with matched controls and an interference check.",
-          "construct": "GS–Phe–Glu and isog–Phe–Glu; each compared with enzyme-only, vehicle and an established inhibitor.",
-          "sequence": "Guanosine–L-Phe–L-Glu / isoguanosine–L-Phe–L-Glu",
+          "construct": "GS-Phe-Glu and isog-Phe-Glu; each compared with enzyme-only, vehicle and an established inhibitor.",
+          "sequence": "Guanosine-L-Phe-L-Glu / isoguanosine-L-Phe-L-Glu",
           "fields": [],
           "procedure": [
             "Confirm identity and purity of the GS and isog compounds before setting matched assay conditions.",

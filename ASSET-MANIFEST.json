@@ -1,186 +1,119 @@
 {
   "project": "dhfr",
-  "liveUrl": "https://alexw4123.github.io/dhfr-cinematic-viewer/",
-  "defaultProject": "dhfr",
+  "revision": "20261028-dhfr-v6",
+  "publicationStatus": "User-approved release",
   "sourceCoordinatesModified": false,
+  "expectedAtoms": 3153,
+  "expectedBonds": 3195,
   "sourceHashes": {
     "dhfr-gs-connected.pdb": "726d5828f685de3bb83d5370b2296a891caef991bb02d0f6627b8b94a7378144",
     "dhfr-isog-connected.pdb": "4322fbcf031733d17a8e409c2bbbf0910e759e8d8aec3628fb586c1c99c0f45b",
+    "selection-maps.v1.compact.json": "a8d259af1cdada74a910690b66adc6abf7ba15456387ee9ffaf7abf6db82b153",
     "ngl.js": "be8d4b16f1d73458efd70d2a3319ef2888fb6fa821732c319a99ff43a8e4f7e0"
   },
-  "expectedBonds": 3195,
-  "newTextFiles": [
+  "navigation": [
+    "Overview",
+    "Models",
+    "Research"
+  ],
+  "defaultRepresentation": "surface",
+  "animation": {
+    "control": "scroll and tap",
+    "autoplay": false,
+    "singleMolecularStage": true,
+    "reducedMotion": true,
+    "coordinatesAnimated": false
+  },
+  "textFiles": [
     "index.html",
-    "style.css",
-    "engine-styles.css",
+    "research-v6.css",
+    "app.js",
+    "research-sections.js",
+    "molecule-engine.js",
     "content.js",
     "application-data.js",
-    "application-ui.js",
-    "molecule-engine.js",
-    "app.js",
-    "figures-data.js",
     "site-config.js",
     "README.md",
     ".nojekyll",
     "assets/selection-maps.v1.compact.json",
     ".github/workflows/pages.yml",
-    "ASSET-MANIFEST.json",
-    "story-data.js",
-    "story-scene.js",
-    "story-scene.css",
-    "story-ui.js",
-    "story-ui.css",
-    "iphone-polish.css",
-    "page-layout.css"
+    "ASSET-MANIFEST.json"
   ],
-  "newBinaryFiles": [],
-  "originalArchivesModified": false,
-  "noNewBackend": true,
-  "projectSwitch": false,
+  "binaryFiles": [
+    "assets/share-card.jpg",
+    "assets/dhfr-surface-source.png"
+  ],
   "files": [
     {
       "path": "index.html",
-      "bytes": 7559,
-      "sha256": "87b6bc56b91ae905d10cb8acd75e35eed321a031a3a64814f877d9fcc672b6e0"
+      "sha256": "4c5090b239ffcd1071b75f1fbffc7df9d802e0ad3b1d5a0d4634321bfa8f3b0a",
+      "bytes": 10373
     },
     {
-      "path": "style.css",
-      "bytes": 33929,
-      "sha256": "ebf40fc0ffefb7b0f31483a80cf6edfe19423c8841c7d299c89b38bf6453bbc1"
-    },
-    {
-      "path": "engine-styles.css",
-      "bytes": 535,
-      "sha256": "a4a78621520a9d99c4645b66146fe643d3ac8e713cd563baa5f5cdafeffb5aa5"
-    },
-    {
-      "path": "content.js",
-      "bytes": 19744,
-      "sha256": "49642cd54abd173f15a1b3b45e778a7f63a3ca6f9423a02cfd4bd09780b51c5e"
-    },
-    {
-      "path": "application-data.js",
-      "bytes": 4283,
-      "sha256": "a8e73bbfdf54ec32b5500f8eb129b26acbf7f6d4ceb8f14bc3784e3d3cfd7ec5"
-    },
-    {
-      "path": "application-ui.js",
-      "bytes": 2318,
-      "sha256": "e658687dba6b5d1406c1a305675706422c96623106e675fbdce40cfbbcd4878b"
-    },
-    {
-      "path": "molecule-engine.js",
-      "bytes": 27083,
-      "sha256": "3d6381f282021ad0c05440c04baa5067df127d7a3981f037192d949dd31700b5"
+      "path": "research-v6.css",
+      "sha256": "f814b282e4d2c2d255b092970ec887ce2ae72a1522e27ead403282876e7cb494",
+      "bytes": 20657
     },
     {
       "path": "app.js",
-      "bytes": 25287,
-      "sha256": "a4f7ce175d0bf466cb466f06fcafafec387af0f2b152abb2485b6b8b0ffe980f"
+      "sha256": "306f4ab9b7233a3cf79f3558c32dd29f5718b3c93b723c3a1f7cab0a3da79966",
+      "bytes": 16062
     },
     {
-      "path": "figures-data.js",
-      "bytes": 152,
-      "sha256": "5a4f096cf6f9263453bb063b7cddab5e8921b7cd2011721042982e1a3687f49a"
+      "path": "research-sections.js",
+      "sha256": "5a806e127a8bbfc3f5fe3e53b2aae4cd12d4a82e9c2d7dfded2ba3501069a875",
+      "bytes": 14236
+    },
+    {
+      "path": "molecule-engine.js",
+      "sha256": "a8b4fabcb5ef32889b72ef572daea00a59188550591e23f785aae5b99f089684",
+      "bytes": 35020
+    },
+    {
+      "path": "content.js",
+      "sha256": "91dbf147c84788888e4c1a9859313a15d8788cbeaae5540b7bc3ca0a826efdd1",
+      "bytes": 19692
+    },
+    {
+      "path": "application-data.js",
+      "sha256": "8bce5249c3cdf736355e56c6f457099cc7408535a760f4dbfc8eb63496466b3f",
+      "bytes": 4275
     },
     {
       "path": "site-config.js",
-      "bytes": 124,
-      "sha256": "49927c5f8ca331bb1cf173cb3c837834c9b871c9c5e182308b9309b026c96960"
+      "sha256": "49927c5f8ca331bb1cf173cb3c837834c9b871c9c5e182308b9309b026c96960",
+      "bytes": 124
     },
     {
       "path": "README.md",
-      "bytes": 1762,
-      "sha256": "3da4dba7cff18738ea616996bc701ab911d3b83cbacb6a9c28754aa2aa6de76d"
+      "sha256": "e6f9043ce261cd4bada85a193c442945e1f2ecb887373115f38ab3725b64bf21",
+      "bytes": 1723
     },
     {
       "path": ".nojekyll",
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
     },
     {
       "path": "assets/selection-maps.v1.compact.json",
-      "bytes": 36476,
-      "sha256": "a8d259af1cdada74a910690b66adc6abf7ba15456387ee9ffaf7abf6db82b153"
+      "sha256": "a8d259af1cdada74a910690b66adc6abf7ba15456387ee9ffaf7abf6db82b153",
+      "bytes": 36476
     },
     {
       "path": ".github/workflows/pages.yml",
-      "bytes": 1168,
-      "sha256": "b8b8c61770b2c724065ae3ee4b93a71b4f6c4f19e5030ddf0a5823fa78f9171b"
+      "sha256": "92092aef319ce547039bb69d01cf1a13e1018c9ebe80dd80bed9c046b29a48ab",
+      "bytes": 1037
     },
     {
-      "path": "story-data.js",
-      "bytes": 29621,
-      "sha256": "4292fbf3070ae74f85696e18faa0c84d9034e2e03e5c0c7e4a148e9c8b04fd22"
+      "path": "assets/share-card.jpg",
+      "sha256": "e80fa2647afeb2aa740da531849df0b00fc7eacdf981cf28e232a50676407060",
+      "bytes": 105922
     },
     {
-      "path": "story-scene.js",
-      "bytes": 26151,
-      "sha256": "6a09e204bc3d0c433f251fbc505200dd5bc1b59a55c90b45c33e38f87caf6d15"
-    },
-    {
-      "path": "story-scene.css",
-      "bytes": 450,
-      "sha256": "74bf711c3efefd625378678216647c906487eaedd27e022e68a93d5b03b977cf"
-    },
-    {
-      "path": "story-ui.js",
-      "bytes": 14494,
-      "sha256": "12d36bd4e528f91806025ad9872c5e7ab81d321090d0830157408a910b676fb3"
-    },
-    {
-      "path": "story-ui.css",
-      "bytes": 8660,
-      "sha256": "446afbd1a58dcd249704b17c18a43cefe81fbaed575b359fdbf8471ca747377f"
-    },
-    {
-      "path": "iphone-polish.css",
-      "bytes": 2587,
-      "sha256": "cd2208fb247ea51965c8794c1f9d6eaef551d6792ed00fa6a0aa4ed3f35dde50"
-    },
-    {
-      "path": "page-layout.css",
-      "bytes": 9408,
-      "sha256": "219747b9acd228409845fe0ea51bf955369cef3db609c5891f50d539019215c6"
+      "path": "assets/dhfr-surface-source.png",
+      "sha256": "e964d5d464ce5c091aaa5492b61f9d33a3c6010424cc4b73363dc5aa709a2e2c",
+      "bytes": 2266003
     }
   ],
-  "revision": "20261024-clear-v5-final",
-  "independentProjectData": true,
-  "motion": {
-    "kind": "camera",
-    "durationSeconds": 2.5,
-    "autoplay": false,
-    "respectsReducedMotion": true,
-    "sourceCoordinatesChanged": false
-  },
-  "animatedStory": {
-    "chapters": 5,
-    "durationSeconds": 35,
-    "autoplayOnPageLoad": false,
-    "iconOnlyPlay": true,
-    "inlineUnderAtomicStructure": true,
-    "sourceAtomicModels": true,
-    "reducedMotion": true,
-    "inPageCaptions": true,
-    "humanFigure": false,
-    "fallingDrop": false
-  },
-  "vendorHashes": {
-    "three.module.js": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
-    "three.core.js": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
-    "THREE-LICENSE.txt": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
-  },
-  "sharePreview": {
-    "image": "assets/share-card.jpg",
-    "width": 1200,
-    "height": 630,
-    "format": "image/jpeg",
-    "sha256": "e80fa2647afeb2aa740da531849df0b00fc7eacdf981cf28e232a50676407060",
-    "source": "Projection of unchanged project atomic coordinates and explicit bonds"
-  },
-  "navigation": [
-    "Overview",
-    "How it works",
-    "Research & results"
-  ]
+  "rollbackCommit": "16b5145b280128f922554c514fd307d07f2d22b7"
 }
