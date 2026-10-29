@@ -1,4 +1,4 @@
-# DHFR | Fairfield University
+# Design, Synthesis, and Computational Evaluation of Peptide-Based Inhibitors Targeting Dihydrofolate Reductase in Cancer
 
 Smith-Carpenter Lab research page by Alexander Wong, in collaboration with Dr. Phelan.
 
@@ -11,3 +11,5 @@ The source coordinates, atom order, explicit connectivity and selection mappings
 There are no measured inhibition or cell-response results for these compounds in the displayed records. Existing evidence, model preparation and future experiments remain distinct. The new interface uses no backend, research recording widget, autoplay film or human delivery scene.
 
 The user approved this working version for DHFR-only publication. The previous version is retained in Git history and an archive branch for rollback. Heme is outside the scope of this release. Use the DHFR-only preparation and verification scripts; shared two-project finalizers must not run.
+
+The page uses Times New Roman throughout, with the full project title supplied by the author.

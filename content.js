@@ -48,7 +48,7 @@ window.RESEARCH_CONTENT = {
     "dhfr": {
       "id": "dhfr",
       "shortName": "DHFR models",
-      "title": "Design and Evaluation of Nucleopeptide Models Targeting Human Dihydrofolate Reductase",
+      "title": "Design, Synthesis, and Computational Evaluation of Peptide-Based Inhibitors Targeting Dihydrofolate Reductase in Cancer",
       "credit": "Alexander Wong",
       "lab": "Smith-Carpenter Lab",
       "institution": "Fairfield University",

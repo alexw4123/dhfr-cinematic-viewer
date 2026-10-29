@@ -1,6 +1,6 @@
 {
   "project": "dhfr",
-  "revision": "20261028-dhfr-v6",
+  "revision": "20261028-dhfr-v6-title",
   "publicationStatus": "User-approved release",
   "sourceCoordinatesModified": false,
   "expectedAtoms": 3153,
@@ -46,13 +46,13 @@
   "files": [
     {
       "path": "index.html",
-      "sha256": "4c5090b239ffcd1071b75f1fbffc7df9d802e0ad3b1d5a0d4634321bfa8f3b0a",
-      "bytes": 10373
+      "sha256": "d3446e35d10c71662163a7e3c461356dfbd7020893e3c77db948f0a4899b3acd",
+      "bytes": 10844
     },
     {
       "path": "research-v6.css",
-      "sha256": "f814b282e4d2c2d255b092970ec887ce2ae72a1522e27ead403282876e7cb494",
-      "bytes": 20657
+      "sha256": "feda4c2e0cdbecf5bbe5b8a88e0acbc83b4a90f174f410e37c60d68686b2cfc3",
+      "bytes": 21380
     },
     {
       "path": "app.js",
@@ -71,8 +71,8 @@
     },
     {
       "path": "content.js",
-      "sha256": "91dbf147c84788888e4c1a9859313a15d8788cbeaae5540b7bc3ca0a826efdd1",
-      "bytes": 19692
+      "sha256": "a5969aba0306ea92f908c43adac6d8b1a651f00f7ac539a65a635d96f4c758ad",
+      "bytes": 19726
     },
     {
       "path": "application-data.js",
@@ -86,8 +86,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "e6f9043ce261cd4bada85a193c442945e1f2ecb887373115f38ab3725b64bf21",
-      "bytes": 1723
+      "sha256": "1008781538716da1ad2f4fea064bf8f35b38e16b64e5477c9393cc8c934a0213",
+      "bytes": 1910
     },
     {
       "path": ".nojekyll",
@@ -115,5 +115,7 @@
       "bytes": 2266003
     }
   ],
-  "rollbackCommit": "16b5145b280128f922554c514fd307d07f2d22b7"
+  "rollbackCommit": "c21648e713df01384f0bfa9617837f18c7d9e9bf",
+  "projectTitle": "Design, Synthesis, and Computational Evaluation of Peptide-Based Inhibitors Targeting Dihydrofolate Reductase in Cancer",
+  "fontFamily": "Times New Roman"
 }
